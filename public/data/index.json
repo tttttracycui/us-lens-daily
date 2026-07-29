@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "generatedAt": null,
+  "reportCount": 1,
+  "reports": [
+    {
+      "id": "2025-01-02-pre",
+      "title": "DEMO｜美股盘前热点简报（完全虚构）",
+      "date": "2025-01-02",
+      "sessionDate": "2025-01-02",
+      "session": "pre",
+      "asOf": "固定展示数据，不代表真实市场",
+      "status": "demo",
+      "summary": "这是一份用于展示 US LENS 信息层级、证据标签和交互结构的完全虚构报告，不包含真实行情、公司研究或每日更新。",
+      "topics": [
+        "虚构热点：示例产业链出现验证信号",
+        "虚构热点：宏观变量进入观察窗口",
+        "虚构热点：市场情绪与事实需要分开"
+      ],
+      "tickers": [
+        "DEMO"
+      ],
+      "tags": [
+        "Demo",
+        "虚构数据"
+      ],
+      "sourceCount": 0,
+      "primarySourceCount": 0,
+      "unverifiedCount": 1,
+      "hotspotCount": 3,
+      "modifiedAt": "2025-01-02T00:00:00.000Z",
+      "dataUrl": "/data/reports/2025-01-02-pre.json"
+    }
+  ]
+}

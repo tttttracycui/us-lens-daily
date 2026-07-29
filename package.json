@@ -1,0 +1,50 @@
+{
+  "name": "us-lens-daily-brief",
+  "version": "0.1.0",
+  "description": "AI-assisted US equity research workflow that turns Obsidian briefs into a searchable web archive.",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
+    "build": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
+    "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
+    "local": "node scripts/local-server.mjs",
+    "local:serve": "WRANGLER_LOG_PATH=.wrangler/local.log vinext start --hostname 127.0.0.1 --port 3001",
+    "sync:reports": "node scripts/sync-reports.mjs",
+    "refresh": "npm run sync:reports && npm run build",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "validate": "npm run lint && npm test",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern .understand-anything",
+    "assets:social": "node scripts/render-social-assets.mjs",
+    "assets:x-preview": "node scripts/render-x-brand-preview.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.37.1",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.6",
+    "react-server-dom-webpack": "19.2.6",
+    "sharp": "0.34.5",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vinext": "0.0.50",
+    "vite": "8.0.13",
+    "wrangler": "4.92.0"
+  },
+  "type": "module"
+}
