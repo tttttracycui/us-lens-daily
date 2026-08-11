@@ -6,7 +6,7 @@ US LENS turns fragmented market information into a repeatable research workflow.
 
 This is more than a daily-news page. It is an end-to-end personal research product connecting information capture, knowledge synthesis, AI workflows, content production, and web delivery.
 
-[View the static interface demo](https://us-lens-daily-brief.yhy86c5pm6.chatgpt.site) (fixed showcase build; no daily synchronization)
+[View the static interface demo](https://tttttracycui.github.io/us-lens-daily/) (fixed GitHub Pages showcase build; no daily synchronization)
 
 ## What it helps with
 
