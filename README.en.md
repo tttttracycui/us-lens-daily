@@ -73,7 +73,7 @@ The workflow demonstrates:
 - preserving conflicting data, inaccessible sources, and unverified assumptions;
 - keeping final source judgment and publishing decisions under human review.
 
-> The complete Obsidian vault and real daily briefs are private. This repository publishes only the product layer, synchronization logic, data contract, and fully fictional interface data.
+> The complete Obsidian vault and day-to-day brief archive remain private. This repository publishes only the product layer, synchronization logic, data contract, and a small curated set of path-sanitized historical samples.
 
 ## Public repository boundary: bring your own AI agent
 
@@ -81,7 +81,7 @@ This repository is a **runnable and extensible publishing framework**. It is not
 
 It includes:
 
-- one fully fictional sample report and the web reading experience;
+- a curated set of path-sanitized historical samples and the web reading experience;
 - the Obsidian Markdown-to-JSON synchronization pipeline;
 - report indexing, historical search, evidence filters, and responsive UI;
 - local build automation, tests, and deployment configuration;
@@ -300,7 +300,7 @@ Key features:
 
 ### Explore the fictional example
 
-The project starts without a private Obsidian vault. It includes one clearly labeled fictional Demo report and no real daily briefs:
+The project starts without a private Obsidian vault. It includes a small set of historical samples selected specifically for portfolio demonstration; it does not synchronize or publish the complete brief archive:
 
 ```bash
 npm ci
@@ -357,7 +357,8 @@ GitHub Actions runs the complete validation workflow on every push and pull requ
 
 ```text
 app/                    Next.js pages, components, types, and global design system
-public/data/            Fictional Demo; locally generated real reports are ignored
+public/data/            Full local report data; generated real reports are ignored by Git
+public/demo/            Curated, path-sanitized samples approved for public display
 scripts/                Obsidian synchronization, local manager, brand asset tools
 scripts/macos/          macOS start/stop workflow
 tests/                  SSR and public-data contract tests

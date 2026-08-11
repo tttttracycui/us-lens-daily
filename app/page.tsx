@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import reportIndex from "@/public/data/index.json";
+import demoReportIndex from "@/public/demo/index.json";
 import { BriefDashboard } from "./components/BriefDashboard";
 import type { ReportIndex } from "./lib/report-types";
 
@@ -10,5 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <BriefDashboard index={reportIndex as ReportIndex} />;
+  const index =
+    process.env.PUBLIC_DEMO === "true" ? demoReportIndex : reportIndex;
+
+  return <BriefDashboard index={index as ReportIndex} />;
 }
