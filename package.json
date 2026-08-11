@@ -15,7 +15,7 @@
     "local:serve": "WRANGLER_LOG_PATH=.wrangler/local.log vinext start --hostname 127.0.0.1 --port 3001",
     "sync:reports": "node scripts/sync-reports.mjs",
     "refresh": "npm run sync:reports && npm run build",
-    "test": "npm run build && node --test tests/*.test.mjs",
+    "test": "npm run build && node --test tests/rendered-html.test.mjs tests/sync-guard.test.mjs",
     "test:pages": "GITHUB_REPOSITORY=tttttracycui/us-lens-daily NEXT_PUBLIC_SITE_URL=https://tttttracycui.github.io/us-lens-daily npm run build:pages && node --test tests/pages-export.test.mjs",
     "validate": "npm run lint && npm test",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern .understand-anything",
