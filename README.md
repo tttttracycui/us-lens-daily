@@ -73,7 +73,7 @@ US LENS 的 AI 使用方式不是“让模型写一篇日报”，而是把研�
 - 保留数据冲突、不可访问来源和未验证假设；
 - 通过人机协作完成最后的来源判断与发布决策。
 
-> 完整 Obsidian vault 与真实日报属于私有内容；本仓库只公开产品层、同步逻辑、数据契约和完全虚构的界面展示数据。
+> 完整 Obsidian vault 与日常报告库属于私有内容；本仓库只公开产品层、同步逻辑、数据契约，以及少量经过筛选和路径脱敏的历史案例样本。
 
 ## 公开仓库边界：请接入自己的 AI Agent
 
@@ -81,7 +81,7 @@ US LENS 的 AI 使用方式不是“让模型写一篇日报”，而是把研�
 
 仓库包含：
 
-- 一份完全虚构的示例报告与网页阅读端；
+- 一组经过筛选和路径脱敏的历史案例样本与网页阅读端；
 - Obsidian Markdown → JSON 同步程序；
 - 报告索引、历史检索、证据筛选和响应式界面；
 - 本地自动构建、测试和部署配置；
@@ -300,7 +300,7 @@ RootLayout (Server Component)
 
 ### 体验虚构示例
 
-从 GitHub clone 后无需 Obsidian vault 即可启动。仓库只包含一份明确标记为 Demo 的虚构报告，不包含任何真实日报：
+从 GitHub clone 后无需 Obsidian vault 即可启动。仓库包含少量为作品集展示而单独选出的历史案例，不会同步或公开完整日报库：
 
 ```bash
 npm ci
@@ -357,7 +357,8 @@ GitHub Actions 会在 push 和 pull request 时执行完整验证。
 
 ```text
 app/                    Next.js 页面、组件、类型与全局设计系统
-public/data/            虚构 Demo；本地生成的真实报告被 Git 忽略
+public/data/            本地完整报告数据；生成的真实报告被 Git 忽略
+public/demo/            经筛选和路径脱敏、允许公开的案例样本
 scripts/                Obsidian 同步、本地 manager、品牌资产工具
 scripts/macos/          macOS 双击启动与停止流程
 tests/                  SSR 与公开数据契约测试

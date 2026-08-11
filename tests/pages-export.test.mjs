@@ -13,10 +13,11 @@ test("GitHub Pages build exports a self-contained static demo", async () => {
   assert.match(html, new RegExp(`${pagesBasePath}/og-us-lens\\.png`));
   assert.doesNotMatch(html, /(?:src|href)="\/_next\//);
 
-  await access(new URL("../out/data/index.json", import.meta.url));
+  await access(new URL("../out/demo/index.json", import.meta.url));
   await access(
-    new URL("../out/data/reports/2025-01-02-pre.json", import.meta.url),
+    new URL("../out/demo/reports/2026-08-11-post.json", import.meta.url),
   );
+  assert.match(html, /2026-08-11 美股盘后热点追踪简报/);
 });
 
 test("client bundle prefixes report requests with the repository path", async () => {
