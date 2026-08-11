@@ -6,7 +6,7 @@ US LENS 把分散的市场信息组织成一条可重复的研究工作流：在
 
 它不只是一个日报页面，而是一个从「信息采集 → 知识消化 → AI 工作流 → 内容生产 → Web 产品化」闭环运行的个人研究产品。
 
-[查看静态界面 Demo](https://us-lens-daily-brief.yhy86c5pm6.chatgpt.site)（固定展示版本，不同步每日更新）
+[查看静态界面 Demo](https://tttttracycui.github.io/us-lens-daily/)（GitHub Pages 固定展示版本，不同步每日更新）
 
 ## 它解决什么问题
 

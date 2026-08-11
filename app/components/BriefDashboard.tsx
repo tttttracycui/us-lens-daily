@@ -50,6 +50,13 @@ const SESSION_LONG_LABEL: Record<ReportSession, string> = {
   post: "盘后复盘",
 };
 
+const PUBLIC_BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+function publicUrl(pathname: string) {
+  const normalizedPath = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  return `${PUBLIC_BASE_PATH}${normalizedPath}`;
+}
+
 type SectionKind =
   | "summary"
   | "hotspots"
@@ -1055,8 +1062,13 @@ export function BriefDashboard({ index }: { index: ReportIndex }) {
   useEffect(() => {
     if (!selectedSummary) return;
     const controller = new AbortController();
-    const reportUrl = new URL(selectedSummary.dataUrl, window.location.origin);
-    reportUrl.searchParams.set("v", index.generatedAt);
+    const reportUrl = new URL(
+      publicUrl(selectedSummary.dataUrl),
+      window.location.origin,
+    );
+    if (index.generatedAt) {
+      reportUrl.searchParams.set("v", index.generatedAt);
+    }
     fetch(reportUrl, { signal: controller.signal })
       .then((response) => {
         if (!response.ok) throw new Error("HTTP " + response.status);

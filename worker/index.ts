@@ -6,6 +6,10 @@ import {
 } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
 
+interface Fetcher {
+  fetch(input: Request | string | URL, init?: RequestInit): Promise<Response>;
+}
+
 interface Env {
   ASSETS: Fetcher;
   IMAGES: {

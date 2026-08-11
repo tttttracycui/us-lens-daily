@@ -3,6 +3,7 @@ import "./globals.css";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || "http://localhost:3001";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "US LENS",
     images: [
       {
-        url: "/og-us-lens.png",
+        url: `${basePath}/og-us-lens.png`,
         width: 1200,
         height: 630,
         alt: "US LENS 美股盘前与盘后热点简报",
